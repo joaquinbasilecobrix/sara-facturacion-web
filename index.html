@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SARA Facturación</title>
+<title>SARA Facturación | Sistema Profesional</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,221 +17,233 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f4f6f9;
-color:#1e293b;
+background:#f8fafc;
+color:#0f172a;
 }
 
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 10%;
 background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
 z-index:1000;
 }
 
-.logo-container{
+.logo{
 display:flex;
 align-items:center;
-gap:10px;
-}
-
-.logo-box{
-background:#0f172a;
-padding:10px;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.logo-text{
+gap:12px;
 font-weight:800;
 font-size:20px;
 }
 
-.btn{
-background:#16a34a;
+.logo-icon{
+width:40px;
+height:40px;
+background:linear-gradient(135deg,#2563eb,#1e40af);
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
 color:white;
-padding:12px 20px;
-border-radius:8px;
+font-weight:bold;
+font-size:18px;
+}
+
+.btn{
+background:linear-gradient(135deg,#16a34a,#15803d);
+color:white;
+padding:14px 28px;
+border-radius:12px;
 text-decoration:none;
 font-weight:600;
-display:inline-block;
 transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+display:inline-block;
 }
 
 .btn:hover{
-background:#15803d;
-transform:translateY(-2px);
+transform:translateY(-4px);
+box-shadow:0 12px 30px rgba(0,0,0,0.2);
 }
 
+/* HERO */
 .hero{
+padding:140px 10% 120px 10%;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
 text-align:center;
-padding:110px 20px 80px 20px;
-animation:fadeIn 1s ease-in;
 }
 
 .hero h1{
-font-size:48px;
+font-size:54px;
 font-weight:800;
-line-height:1.2;
-margin-bottom:20px;
-}
-
-.hero span{
-color:#2563eb;
+margin-bottom:25px;
+animation:fadeUp 1s ease forwards;
 }
 
 .hero p{
-font-size:18px;
-color:#64748b;
-max-width:600px;
-margin:0 auto 30px auto;
+font-size:19px;
+color:#cbd5e1;
+max-width:650px;
+margin:0 auto 35px auto;
+animation:fadeUp 1.3s ease forwards;
 }
 
+.hero span{
+color:#3b82f6;
+}
+
+.stats{
+margin-top:40px;
+font-size:18px;
+color:#94a3b8;
+animation:fadeUp 1.6s ease forwards;
+}
+
+/* SECTION */
 .section{
-padding:90px 10%;
+padding:110px 10%;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:60px;
-font-size:32px;
-font-weight:700;
+font-size:34px;
+font-weight:800;
+margin-bottom:70px;
 }
 
-.cards{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
 }
 
 .card{
 background:white;
-padding:30px;
-border-radius:16px;
-box-shadow:0 8px 25px rgba(0,0,0,0.05);
+padding:40px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,0.05);
 transition:0.3s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card.visible{
+opacity:1;
+transform:translateY(0);
+transition:all 0.6s ease;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-8px);
 }
 
-.card h3{
-margin-bottom:10px;
-}
-
-.card p{
-color:#64748b;
-font-size:15px;
-}
-
-.dark-section{
-background:#0f172a;
-color:white;
+/* SCREENSHOTS */
+.screenshots{
+background:#e2e8f0;
+padding:110px 10%;
 text-align:center;
-padding:90px 20px;
 }
 
-.dark-section h2{
-font-size:40px;
-margin-bottom:20px;
+.screenshot-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+margin-top:60px;
 }
 
-.dark-section p{
-color:#cbd5e1;
+.screenshot{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.screenshot img{
+width:100%;
+display:block;
+}
+
+.screenshot:hover{
+transform:scale(1.03);
+}
+
+/* PRICE */
+.price-section{
+padding:120px 10%;
+text-align:center;
+background:linear-gradient(135deg,#e2e8f0,#f1f5f9);
 }
 
 .price-box{
 background:white;
-color:#1e293b;
 max-width:520px;
-margin:50px auto 0 auto;
-padding:40px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.2);
-}
-
-.price-box h3{
-color:#2563eb;
-font-size:14px;
-margin-bottom:10px;
-letter-spacing:1px;
+margin:auto;
+padding:50px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
 
 .price-box h1{
-font-size:36px;
-margin-bottom:15px;
+font-size:40px;
+margin:20px 0;
 }
 
 .price-box ul{
 list-style:none;
-margin-bottom:20px;
+margin:30px 0;
 }
 
 .price-box li{
-margin-bottom:10px;
+margin-bottom:12px;
 color:#475569;
 }
 
-.testimonials{
-background:#ffffff;
-padding:90px 10%;
-}
-
-.testimonial-card{
-background:#f8fafc;
-padding:30px;
-border-radius:16px;
-margin-bottom:30px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-
-.testimonial-card h4{
-margin-top:15px;
-}
-
+/* FOOTER */
 footer{
-text-align:center;
-padding:40px;
 background:#111827;
-color:white;
+color:#cbd5e1;
+text-align:center;
+padding:60px 20px;
 font-size:14px;
 }
 
-.whatsapp-float{
+/* WHATSAPP */
+.whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:25px;
+right:25px;
 background:#16a34a;
 color:white;
-padding:15px 18px;
+padding:16px 22px;
 border-radius:50px;
 font-weight:600;
 text-decoration:none;
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
-transition:0.3s;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
 }
 
-.whatsapp-float:hover{
-background:#15803d;
-transform:scale(1.05);
+/* ANIMATIONS */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
 }
-
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(20px);}
-to{opacity:1; transform:translateY(0);}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 @media(max-width:768px){
-.hero h1{
-font-size:32px;
-}
+.hero h1{font-size:34px;}
+.section-title{font-size:26px;}
 }
 </style>
 </head>
@@ -239,76 +251,74 @@ font-size:32px;
 <body>
 
 <header>
-<div class="logo-container">
-<div class="logo-box">
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 24 24">
-<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-3v-7H8v7H5a2 2 0 0 1-2-2z"/>
-</svg>
-</div>
-<div class="logo-text">SARA Facturación</div>
+<div class="logo">
+<div class="logo-icon">S</div>
+SARA Facturación
 </div>
 <a class="btn" href="https://wa.me/5491121683979">Contactar</a>
 </header>
 
 <section class="hero">
-<h1>Facturá más rápido, <span>vendé más tranquilo</span></h1>
-<p>El sistema de facturación que tu comercio necesita. Profesional, simple y sin cuotas mensuales.</p>
+<h1>El sistema de facturación <span>que profesionaliza tu negocio</span></h1>
+<p>Control total de ventas, clientes y stock en una sola plataforma. Simple, potente y sin mensualidades.</p>
 <a class="btn" href="https://wa.me/5491121683979">Solicitar información</a>
+<div class="stats">+500 comercios ya lo utilizan</div>
 </section>
 
 <section class="section">
-<div class="section-title">Todo lo que tu comercio necesita</div>
+<div class="section-title">Potencia tu comercio</div>
 
-<div class="cards">
+<div class="grid">
 <div class="card">
-<h3>Facturación Profesional</h3>
-<p>Generá facturas elegantes y exportá PDF en segundos.</p>
+<h3>Facturación Inteligente</h3>
+<p>Emití facturas profesionales en segundos y exportalas en PDF automáticamente.</p>
 </div>
 
 <div class="card">
 <h3>Gestión de Clientes</h3>
-<p>Base de datos completa con historial de compras.</p>
+<p>Historial completo de compras y datos organizados.</p>
 </div>
 
 <div class="card">
 <h3>Control de Inventario</h3>
-<p>Stock actualizado en tiempo real con alertas.</p>
+<p>Stock actualizado en tiempo real con alertas automáticas.</p>
 </div>
 
 <div class="card">
-<h3>Reportes Detallados</h3>
-<p>Estadísticas claras para tomar mejores decisiones.</p>
+<h3>Reportes Estratégicos</h3>
+<p>Visualizá tus ganancias y tomá decisiones con datos claros.</p>
 </div>
 </div>
 </section>
 
-<section class="testimonials">
-<div class="section-title">Lo que dicen nuestros clientes</div>
+<section class="screenshots">
+<div class="section-title">Capturas del Sistema</div>
 
-<div class="testimonial-card">
-<p>“Antes perdía horas con Excel. Ahora facturo en segundos y sé exactamente cuánto vendí cada día.”</p>
-<h4>María González – Buenos Aires</h4>
+<div class="screenshot-grid">
+<div class="screenshot">
+<img src="https://via.placeholder.com/800x500?text=Dashboard+SARA" alt="">
 </div>
 
-<div class="testimonial-card">
-<p>“El control de stock me salvó. Ya no me quedo sin productos importantes.”</p>
-<h4>Carlos Rodríguez – Córdoba</h4>
+<div class="screenshot">
+<img src="https://via.placeholder.com/800x500?text=Facturacion" alt="">
+</div>
+
+<div class="screenshot">
+<img src="https://via.placeholder.com/800x500?text=Control+de+Stock" alt="">
+</div>
 </div>
 </section>
 
-<section class="dark-section">
-<h2>Un solo pago, tuyo para siempre.</h2>
-<p>Sin cuotas mensuales. Instalación inmediata.</p>
-
+<section class="price-section">
 <div class="price-box">
 <h3>LICENCIA COMPLETA</h3>
 <h1>Consultar precio</h1>
 
 <ul>
-<li>✔ Instalación en 5 minutos</li>
-<li>✔ Soporte técnico incluido</li>
-<li>✔ Pago único, sin mensualidades</li>
+<li>✔ Pago único</li>
+<li>✔ Soporte incluido</li>
 <li>✔ Actualizaciones por 1 año</li>
+<li>✔ Instalación inmediata</li>
 </ul>
 
 <a class="btn" href="https://wa.me/5491121683979">Contactar por WhatsApp</a>
@@ -316,11 +326,26 @@ font-size:32px;
 </section>
 
 <footer>
-© 2026 SARA Facturación - Todos los derechos reservados
+© 2026 SARA Facturación - Software Profesional para Comercios
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/5491121683979">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/5491121683979">WhatsApp</a>
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+},{threshold:0.2});
+
+cards.forEach(card=>{
+observer.observe(card);
+});
+</script>
 
 </body>
 </html>
-
