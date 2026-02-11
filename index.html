@@ -8,256 +8,154 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;scroll-behavior:smooth;}
+body{background:#0b1120;color:white;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
 
-body{
-background:#0b1120;
-color:white;
-overflow-x:hidden;
-}
-
-/* Luces de fondo */
 body::before{
-content:"";
-position:fixed;
-top:-300px;
-left:-300px;
-width:700px;
-height:700px;
-background:radial-gradient(circle,#2563eb30,transparent 70%);
-z-index:-1;
-}
-
+content:"";position:fixed;top:-300px;left:-300px;width:700px;height:700px;
+background:radial-gradient(circle,#2563eb30,transparent 70%);z-index:-1;}
 body::after{
-content:"";
-position:fixed;
-bottom:-300px;
-right:-300px;
-width:700px;
-height:700px;
-background:radial-gradient(circle,#16a34a30,transparent 70%);
-z-index:-1;
-}
+content:"";position:fixed;bottom:-300px;right:-300px;width:700px;height:700px;
+background:radial-gradient(circle,#16a34a30,transparent 70%);z-index:-1;}
 
-/* HEADER */
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 10%;
-backdrop-filter:blur(20px);
+display:flex;justify-content:space-between;align-items:center;
+padding:20px 10%;backdrop-filter:blur(20px);
 background:rgba(15,23,42,0.6);
-position:sticky;
-top:0;
-z-index:1000;
+position:sticky;top:0;z-index:1000;
 border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
+nav a{
+margin-left:25px;
+font-size:14px;
+color:#cbd5e1;
+}
+
+nav a:hover{color:white;}
+
 .logo{
-display:flex;
-align-items:center;
-gap:12px;
-font-weight:800;
-font-size:20px;
+display:flex;align-items:center;gap:12px;
+font-weight:800;font-size:20px;
 }
 
 .logo-icon{
-width:44px;
-height:44px;
+width:44px;height:44px;
 background:linear-gradient(135deg,#2563eb,#1e40af);
 border-radius:14px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:bold;
-font-size:20px;
+display:flex;align-items:center;justify-content:center;
+font-weight:bold;font-size:20px;
 }
 
-/* BOTONES */
 .btn{
 background:linear-gradient(135deg,#16a34a,#15803d);
-padding:14px 30px;
-border-radius:14px;
-font-weight:600;
-text-decoration:none;
-color:white;
+padding:14px 30px;border-radius:14px;
+font-weight:600;color:white;
 transition:0.3s;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 display:inline-block;
 }
+.btn:hover{transform:translateY(-4px);}
 
-.btn:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
-}
-
-/* HERO */
 .hero{
-padding:160px 10% 140px 10%;
-text-align:center;
+padding:150px 10%;text-align:center;
 }
-
 .badge{
-display:inline-block;
-background:rgba(59,130,246,0.15);
-padding:8px 20px;
-border-radius:50px;
-font-size:14px;
-margin-bottom:25px;
-color:#60a5fa;
+display:inline-block;background:rgba(59,130,246,0.15);
+padding:8px 20px;border-radius:50px;
+font-size:14px;margin-bottom:25px;color:#60a5fa;
 }
-
 .hero h1{
-font-size:60px;
-font-weight:800;
-margin-bottom:25px;
-line-height:1.1;
+font-size:58px;font-weight:800;margin-bottom:25px;line-height:1.1;
 }
-
 .hero span{
 background:linear-gradient(90deg,#3b82f6,#60a5fa);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
 }
-
 .hero p{
-font-size:20px;
-color:#cbd5e1;
-max-width:700px;
-margin:0 auto 35px auto;
+font-size:20px;color:#cbd5e1;max-width:700px;margin:0 auto 35px auto;
 }
 
 .stats{
-margin-top:40px;
-font-size:32px;
-font-weight:800;
-color:#3b82f6;
+margin-top:40px;font-size:30px;font-weight:800;color:#3b82f6;
 }
 
-/* SECCIONES */
-.section{
-padding:130px 10%;
-}
+.section{padding:120px 10%;}
+.section-title{text-align:center;font-size:36px;font-weight:800;margin-bottom:80px;}
 
-.section-title{
-text-align:center;
-font-size:38px;
-font-weight:800;
-margin-bottom:90px;
-}
-
-/* GRID */
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:40px;
 }
 
 .card{
 background:rgba(255,255,255,0.05);
-padding:45px;
-border-radius:28px;
-backdrop-filter:blur(25px);
+padding:40px;border-radius:25px;
 border:1px solid rgba(255,255,255,0.08);
 transition:0.3s;
 }
+.card:hover{transform:translateY(-6px);background:rgba(255,255,255,0.08);}
 
-.card:hover{
-transform:translateY(-8px);
-background:rgba(255,255,255,0.08);
-}
-
-/* SCREENSHOTS */
 .screenshots{
-background:#0f172a;
-padding:130px 10%;
-text-align:center;
+background:#0f172a;padding:120px 10%;text-align:center;
 }
-
 .screenshot-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:50px;
-margin-top:60px;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;margin-top:50px;
 }
-
 .screenshot{
-border-radius:28px;
-overflow:hidden;
+border-radius:25px;overflow:hidden;
 box-shadow:0 30px 70px rgba(0,0,0,0.6);
 transition:0.4s;
 }
+.screenshot img{width:100%;}
+.screenshot:hover{transform:scale(1.05);}
 
-.screenshot img{
-width:100%;
-display:block;
-}
-
-.screenshot:hover{
-transform:scale(1.05);
-}
-
-/* TESTIMONIOS */
-.testimonial{
-background:rgba(255,255,255,0.05);
-padding:40px;
-border-radius:24px;
-border:1px solid rgba(255,255,255,0.08);
-}
-
-/* COMPARATIVA */
 .compare{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
+display:grid;grid-template-columns:1fr 1fr;gap:40px;
 }
-
 .compare-box{
-padding:40px;
-border-radius:25px;
+padding:40px;border-radius:25px;
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
 }
+.compare-box ul{list-style:none;margin-top:20px;}
+.compare-box li{margin-bottom:12px;color:#cbd5e1;}
 
-.compare-box ul{
-list-style:none;
-}
-
-.compare-box li{
-margin-bottom:15px;
-color:#cbd5e1;
-}
-
-/* FOOTER */
-footer{
-padding:80px 20px;
+.plan{
 text-align:center;
-color:#94a3b8;
-background:#0b1120;
+background:rgba(255,255,255,0.05);
+padding:60px;border-radius:30px;
+border:1px solid rgba(255,255,255,0.08);
+max-width:600px;margin:auto;
+}
+.price{
+font-size:48px;font-weight:800;margin:20px 0;
 }
 
-/* WHATSAPP */
+.faq{
+max-width:800px;margin:auto;
+}
+.faq-item{
+margin-bottom:30px;
+}
+.faq-item h4{margin-bottom:10px;}
+
+footer{
+padding:80px 20px;text-align:center;
+color:#94a3b8;background:#0b1120;
+}
+
 .whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#16a34a;
-padding:18px 24px;
-border-radius:50px;
-font-weight:600;
-text-decoration:none;
-color:white;
-box-shadow:0 15px 35px rgba(0,0,0,0.6);
+position:fixed;bottom:25px;right:25px;
+background:#16a34a;padding:18px 24px;
+border-radius:50px;font-weight:600;
+color:white;box-shadow:0 15px 35px rgba(0,0,0,0.6);
 }
 
 @media(max-width:768px){
-.hero h1{font-size:36px;}
+.hero h1{font-size:34px;}
 .section-title{font-size:28px;}
 .compare{grid-template-columns:1fr;}
 }
@@ -271,86 +169,71 @@ box-shadow:0 15px 35px rgba(0,0,0,0.6);
 <div class="logo-icon">S</div>
 SARA Facturación
 </div>
+<nav>
+<a href="#funciones">Funciones</a>
+<a href="#capturas">Capturas</a>
+<a href="#plan">Plan</a>
+<a href="#faq">FAQ</a>
+</nav>
 <a class="btn" href="https://wa.me/5491121683979">Contactar</a>
 </header>
 
 <section class="hero">
-<div class="badge">Software Profesional para Comercios</div>
-<h1>El sistema que <span>transforma tu negocio</span></h1>
-<p>Facturación, clientes, stock y reportes en una sola plataforma diseñada para profesionalizar tu comercio.</p>
+<div class="badge">+500 comercios ya lo utilizan</div>
+<h1>Profesionalizá tu <span>negocio hoy</span></h1>
+<p>Facturación, clientes, stock y reportes en una sola plataforma moderna.</p>
 <a class="btn" href="https://wa.me/5491121683979">Solicitar información</a>
-<div class="stats"><span id="counter">0</span>+ comercios ya lo utilizan</div>
+<div class="stats"><span id="counter">0</span>+ usuarios activos</div>
 </section>
 
-<section class="section">
+<section class="section" id="funciones">
 <div class="section-title">Funciones principales</div>
 <div class="grid">
-<div class="card">
-<h3>Facturación Profesional</h3>
-<p>Emití facturas elegantes y exportalas automáticamente en PDF.</p>
-</div>
-<div class="card">
-<h3>Gestión de Clientes</h3>
-<p>Historial completo y datos organizados.</p>
-</div>
-<div class="card">
-<h3>Control de Stock</h3>
-<p>Inventario en tiempo real con alertas.</p>
-</div>
-<div class="card">
-<h3>Reportes Inteligentes</h3>
-<p>Visualizá ganancias y rendimiento fácilmente.</p>
-</div>
+<div class="card"><h3>Facturación</h3><p>Generación de comprobantes en segundos.</p></div>
+<div class="card"><h3>Clientes</h3><p>Historial y base de datos organizada.</p></div>
+<div class="card"><h3>Stock</h3><p>Control automático en tiempo real.</p></div>
+<div class="card"><h3>Reportes</h3><p>Análisis claros y profesionales.</p></div>
 </div>
 </section>
 
-<section class="screenshots">
-<div class="section-title">Así se ve SARA</div>
+<section class="screenshots" id="capturas">
+<div class="section-title">Capturas del sistema</div>
 <div class="screenshot-grid">
-<div class="screenshot">
-<img src="https://via.placeholder.com/900x550?text=Dashboard+SARA">
-</div>
-<div class="screenshot">
-<img src="https://via.placeholder.com/900x550?text=Facturacion">
-</div>
-<div class="screenshot">
-<img src="https://via.placeholder.com/900x550?text=Control+de+Stock">
-</div>
+<div class="screenshot"><img src="https://via.placeholder.com/900x550?text=Dashboard"></div>
+<div class="screenshot"><img src="https://via.placeholder.com/900x550?text=Facturacion"></div>
+<div class="screenshot"><img src="https://via.placeholder.com/900x550?text=Stock"></div>
 </div>
 </section>
 
 <section class="section">
-<div class="section-title">Lo que dicen nuestros clientes</div>
+<div class="section-title">Cómo funciona</div>
 <div class="grid">
-<div class="testimonial">
-<p>“Desde que uso SARA controlo mejor mi stock.”</p>
-<strong>— Martín</strong>
-</div>
-<div class="testimonial">
-<p>“Dejé Excel y ahora trabajo profesionalmente.”</p>
-<strong>— Laura</strong>
-</div>
+<div class="card"><h3>1. Instalás</h3><p>Configuración rápida.</p></div>
+<div class="card"><h3>2. Cargás productos</h3><p>Base lista para vender.</p></div>
+<div class="card"><h3>3. Facturás</h3><p>Todo automatizado.</p></div>
 </div>
 </section>
 
-<section class="section">
-<div class="section-title">SARA vs Excel</div>
-<div class="compare">
-<div class="compare-box">
-<h3>Excel</h3>
-<ul>
-<li>❌ Manual</li>
-<li>❌ Sin control real</li>
-<li>❌ Propenso a errores</li>
-</ul>
+<section class="section" id="plan">
+<div class="section-title">Plan Disponible</div>
+<div class="plan">
+<h3>Licencia Profesional</h3>
+<div class="price">$XX.XXX</div>
+<p>Pago único o transferencia manual.</p>
+<a class="btn" href="https://wa.me/5491121683979">Solicitar ahora</a>
 </div>
-<div class="compare-box">
-<h3>SARA Facturación</h3>
-<ul>
-<li>✔ Automático</li>
-<li>✔ Stock en tiempo real</li>
-<li>✔ Imagen profesional</li>
-</ul>
+</section>
+
+<section class="section" id="faq">
+<div class="section-title">Preguntas Frecuentes</div>
+<div class="faq">
+<div class="faq-item">
+<h4>¿Tiene pago automático?</h4>
+<p>No. La contratación es manual por WhatsApp.</p>
+</div>
+<div class="faq-item">
+<h4>¿Funciona en Windows?</h4>
+<p>Sí, totalmente compatible.</p>
 </div>
 </div>
 </section>
@@ -362,20 +245,10 @@ SARA Facturación
 <a class="whatsapp" href="https://wa.me/5491121683979">WhatsApp</a>
 
 <script>
-let count = 0;
-let target = 500;
-let counter = document.getElementById("counter");
-
-let interval = setInterval(()=>{
-count += 5;
-counter.innerText = count;
-if(count >= target){
-clearInterval(interval);
-}
-},20);
+let count=0;let target=500;let counter=document.getElementById("counter");
+let interval=setInterval(()=>{count+=5;counter.innerText=count;if(count>=target){clearInterval(interval);}},20);
 </script>
 
 </body>
 </html>
-
 
