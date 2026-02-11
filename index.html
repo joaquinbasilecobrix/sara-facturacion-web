@@ -17,8 +17,32 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f8fafc;
-color:#0f172a;
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+/* FONDOS CON LUZ */
+body::before{
+content:"";
+position:fixed;
+top:-200px;
+left:-200px;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#2563eb40,transparent 70%);
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+bottom:-200px;
+right:-200px;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#16a34a40,transparent 70%);
+z-index:-1;
 }
 
 /* HEADER */
@@ -26,12 +50,13 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
-background:white;
-box-shadow:0 4px 20px rgba(0,0,0,0.05);
+padding:25px 10%;
+backdrop-filter:blur(15px);
+background:rgba(15,23,42,0.6);
 position:sticky;
 top:0;
 z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 .logo{
@@ -43,176 +68,156 @@ font-size:20px;
 }
 
 .logo-icon{
-width:40px;
-height:40px;
+width:42px;
+height:42px;
 background:linear-gradient(135deg,#2563eb,#1e40af);
-border-radius:12px;
+border-radius:14px;
 display:flex;
 align-items:center;
 justify-content:center;
-color:white;
 font-weight:bold;
-font-size:18px;
+font-size:20px;
 }
 
+/* BOTON */
 .btn{
 background:linear-gradient(135deg,#16a34a,#15803d);
-color:white;
-padding:14px 28px;
-border-radius:12px;
-text-decoration:none;
+padding:14px 30px;
+border-radius:14px;
 font-weight:600;
+text-decoration:none;
+color:white;
 transition:0.3s;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 display:inline-block;
 }
 
 .btn:hover{
 transform:translateY(-4px);
-box-shadow:0 12px 30px rgba(0,0,0,0.2);
 }
 
 /* HERO */
 .hero{
-padding:140px 10% 120px 10%;
-background:linear-gradient(135deg,#0f172a,#1e293b);
-color:white;
+padding:150px 10% 120px 10%;
 text-align:center;
 }
 
-.hero h1{
-font-size:54px;
-font-weight:800;
+.badge{
+display:inline-block;
+background:rgba(59,130,246,0.15);
+padding:8px 18px;
+border-radius:50px;
+font-size:14px;
 margin-bottom:25px;
-animation:fadeUp 1s ease forwards;
+color:#60a5fa;
 }
 
-.hero p{
-font-size:19px;
-color:#cbd5e1;
-max-width:650px;
-margin:0 auto 35px auto;
-animation:fadeUp 1.3s ease forwards;
+.hero h1{
+font-size:58px;
+font-weight:800;
+margin-bottom:25px;
+line-height:1.1;
 }
 
 .hero span{
-color:#3b82f6;
+background:linear-gradient(90deg,#3b82f6,#60a5fa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:20px;
+color:#cbd5e1;
+max-width:700px;
+margin:0 auto 35px auto;
 }
 
 .stats{
 margin-top:40px;
-font-size:18px;
-color:#94a3b8;
-animation:fadeUp 1.6s ease forwards;
+font-size:28px;
+font-weight:700;
+color:#3b82f6;
 }
 
-/* SECTION */
+/* SECCIONES */
 .section{
-padding:110px 10%;
+padding:120px 10%;
 }
 
 .section-title{
 text-align:center;
-font-size:34px;
+font-size:36px;
 font-weight:800;
-margin-bottom:70px;
+margin-bottom:80px;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:35px;
+gap:40px;
 }
 
 .card{
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:0 15px 35px rgba(0,0,0,0.05);
+background:rgba(255,255,255,0.05);
+padding:45px;
+border-radius:24px;
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.08);
 transition:0.3s;
-opacity:0;
-transform:translateY(40px);
-}
-
-.card.visible{
-opacity:1;
-transform:translateY(0);
-transition:all 0.6s ease;
 }
 
 .card:hover{
 transform:translateY(-8px);
+background:rgba(255,255,255,0.08);
 }
 
-/* SCREENSHOTS */
-.screenshots{
-background:#e2e8f0;
-padding:110px 10%;
-text-align:center;
+/* TESTIMONIOS */
+.testimonial{
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:24px;
+border:1px solid rgba(255,255,255,0.08);
 }
 
-.screenshot-grid{
+.testimonial p{
+color:#cbd5e1;
+margin-bottom:15px;
+}
+
+/* COMPARATIVA */
+.compare{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-margin-top:60px;
+grid-template-columns:1fr 1fr;
+gap:40px;
 }
 
-.screenshot{
-background:white;
+.compare-box{
+padding:40px;
 border-radius:20px;
-overflow:hidden;
-box-shadow:0 15px 35px rgba(0,0,0,0.1);
-transition:0.3s;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
 }
 
-.screenshot img{
-width:100%;
-display:block;
+.compare-box h3{
+margin-bottom:20px;
 }
 
-.screenshot:hover{
-transform:scale(1.03);
-}
-
-/* PRICE */
-.price-section{
-padding:120px 10%;
-text-align:center;
-background:linear-gradient(135deg,#e2e8f0,#f1f5f9);
-}
-
-.price-box{
-background:white;
-max-width:520px;
-margin:auto;
-padding:50px;
-border-radius:25px;
-box-shadow:0 20px 50px rgba(0,0,0,0.15);
-}
-
-.price-box h1{
-font-size:40px;
-margin:20px 0;
-}
-
-.price-box ul{
+.compare-box ul{
 list-style:none;
-margin:30px 0;
 }
 
-.price-box li{
+.compare-box li{
 margin-bottom:12px;
-color:#475569;
+color:#cbd5e1;
 }
 
 /* FOOTER */
 footer{
-background:#111827;
-color:#cbd5e1;
+padding:70px 20px;
 text-align:center;
-padding:60px 20px;
-font-size:14px;
+color:#94a3b8;
+background:#0f172a;
 }
 
 /* WHATSAPP */
@@ -221,29 +226,18 @@ position:fixed;
 bottom:25px;
 right:25px;
 background:#16a34a;
-color:white;
-padding:16px 22px;
+padding:18px 24px;
 border-radius:50px;
 font-weight:600;
 text-decoration:none;
-box-shadow:0 8px 25px rgba(0,0,0,0.3);
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+color:white;
+box-shadow:0 15px 35px rgba(0,0,0,0.6);
 }
 
 @media(max-width:768px){
-.hero h1{font-size:34px;}
+.hero h1{font-size:36px;}
 .section-title{font-size:26px;}
+.compare{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -259,93 +253,82 @@ SARA Facturación
 </header>
 
 <section class="hero">
-<h1>El sistema de facturación <span>que profesionaliza tu negocio</span></h1>
-<p>Control total de ventas, clientes y stock en una sola plataforma. Simple, potente y sin mensualidades.</p>
+<div class="badge">Software Profesional para Comercios</div>
+<h1>El sistema que <span>transforma tu negocio</span></h1>
+<p>Facturación, clientes, stock y reportes en una sola plataforma diseñada para profesionalizar tu comercio.</p>
 <a class="btn" href="https://wa.me/5491121683979">Solicitar información</a>
-<div class="stats">+500 comercios ya lo utilizan</div>
+<div class="stats"><span id="counter">0</span>+ comercios ya lo utilizan</div>
 </section>
 
 <section class="section">
-<div class="section-title">Potencia tu comercio</div>
-
+<div class="section-title">¿Para quién es SARA?</div>
 <div class="grid">
-<div class="card">
-<h3>Facturación Inteligente</h3>
-<p>Emití facturas profesionales en segundos y exportalas en PDF automáticamente.</p>
+<div class="card">Ferreterías</div>
+<div class="card">Sanitarios</div>
+<div class="card">Comercios minoristas</div>
+<div class="card">Distribuidoras</div>
 </div>
+</section>
 
-<div class="card">
-<h3>Gestión de Clientes</h3>
-<p>Historial completo de compras y datos organizados.</p>
+<section class="section">
+<div class="section-title">Lo que dicen nuestros clientes</div>
+<div class="grid">
+<div class="testimonial">
+<p>“Desde que uso SARA controlo mejor mi stock y mis ventas.”</p>
+<strong>— Martín, Ferretería</strong>
 </div>
-
-<div class="card">
-<h3>Control de Inventario</h3>
-<p>Stock actualizado en tiempo real con alertas automáticas.</p>
-</div>
-
-<div class="card">
-<h3>Reportes Estratégicos</h3>
-<p>Visualizá tus ganancias y tomá decisiones con datos claros.</p>
+<div class="testimonial">
+<p>“Dejé Excel y ahora trabajo mucho más organizado.”</p>
+<strong>— Laura, Comercio Minorista</strong>
 </div>
 </div>
 </section>
 
-<section class="screenshots">
-<div class="section-title">Capturas del Sistema</div>
-
-<div class="screenshot-grid">
-<div class="screenshot">
-<img src="https://via.placeholder.com/800x500?text=Dashboard+SARA" alt="">
-</div>
-
-<div class="screenshot">
-<img src="https://via.placeholder.com/800x500?text=Facturacion" alt="">
-</div>
-
-<div class="screenshot">
-<img src="https://via.placeholder.com/800x500?text=Control+de+Stock" alt="">
-</div>
-</div>
-</section>
-
-<section class="price-section">
-<div class="price-box">
-<h3>LICENCIA COMPLETA</h3>
-<h1>Consultar precio</h1>
-
+<section class="section">
+<div class="section-title">SARA vs Excel</div>
+<div class="compare">
+<div class="compare-box">
+<h3>Excel</h3>
 <ul>
-<li>✔ Pago único</li>
-<li>✔ Soporte incluido</li>
-<li>✔ Actualizaciones por 1 año</li>
-<li>✔ Instalación inmediata</li>
+<li>❌ Manual</li>
+<li>❌ Sin control real de stock</li>
+<li>❌ Propenso a errores</li>
+<li>❌ No profesional</li>
 </ul>
+</div>
 
-<a class="btn" href="https://wa.me/5491121683979">Contactar por WhatsApp</a>
+<div class="compare-box">
+<h3>SARA Facturación</h3>
+<ul>
+<li>✔ Automático</li>
+<li>✔ Stock en tiempo real</li>
+<li>✔ Reportes claros</li>
+<li>✔ Imagen profesional</li>
+</ul>
+</div>
 </div>
 </section>
 
 <footer>
-© 2026 SARA Facturación - Software Profesional para Comercios
+© 2026 SARA Facturación - Software Profesional
 </footer>
 
 <a class="whatsapp" href="https://wa.me/5491121683979">WhatsApp</a>
 
 <script>
-const cards = document.querySelectorAll(".card");
+let count = 0;
+let target = 500;
+let counter = document.getElementById("counter");
 
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
+let interval = setInterval(()=>{
+count += 5;
+counter.innerText = count;
+if(count >= target){
+clearInterval(interval);
 }
-});
-},{threshold:0.2});
-
-cards.forEach(card=>{
-observer.observe(card);
-});
+},20);
 </script>
 
 </body>
 </html>
+
