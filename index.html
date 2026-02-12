@@ -1,143 +1,262 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SARA Facturación - Sistema Profesional</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-body { font-family: 'Inter', sans-serif; }
-.fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
-@keyframes fadeIn { to { opacity: 1; } }
-</style>
-</head>
+import React from 'react';
+import { 
+  FileText, 
+  Users, 
+  Package, 
+  BarChart3, 
+  Download, 
+  CheckCircle, 
+  Star, 
+  ArrowRight,
+  Smartphone,
+  Shield,
+  Zap,
+  Clock,
+  CreditCard,
+  HeadphonesIcon,
+  Store,
+  Quote
+} from 'lucide-react';
+import { Button } from '../components/ui/button';
+import { Card, CardContent } from '../components/ui/card';
 
-<body class="bg-gray-50 text-gray-800">
+const WHATSAPP_URL = "https://wa.me/5491121683979";
 
-<!-- NAV -->
-<header class="bg-white shadow-sm fixed w-full z-50">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<h1 class="text-2xl font-extrabold text-blue-600">SARA Facturación</h1>
-<a href="https://wa.me/5491121683979" class="bg-blue-600 text-white px-5 py-2 rounded-xl font-semibold hover:bg-blue-700 transition">
-Hablar por WhatsApp
-</a>
-</div>
-</header>
+const features = [
+  {
+    icon: FileText,
+    title: 'Facturación Profesional',
+    description: 'Crea facturas elegantes con tu logo y datos. Exporta a PDF en un clic.'
+  },
+  {
+    icon: Users,
+    title: 'Gestión de Clientes',
+    description: 'Base de datos completa de clientes con historial de compras.'
+  },
+  {
+    icon: Package,
+    title: 'Control de Inventario',
+    description: 'Stock en tiempo real con alertas de productos bajos.'
+  },
+  {
+    icon: BarChart3,
+    title: 'Reportes Detallados',
+    description: 'Estadísticas de ventas, productos más vendidos y mejores clientes.'
+  },
+  {
+    icon: Smartphone,
+    title: 'Funciona en Todo',
+    description: 'PC, tablet o celular. Instálalo como app en cualquier dispositivo.'
+  },
+  {
+    icon: Shield,
+    title: 'Tus Datos Seguros',
+    description: 'Tu información nunca sale de tu servidor. Control total.'
+  }
+];
 
-<!-- HERO -->
-<section class="pt-32 pb-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center">
-<div class="max-w-4xl mx-auto px-6 fade-in">
-<h2 class="text-4xl md:text-5xl font-extrabold mb-6">
-El sistema de facturación que tu negocio necesita
-</h2>
-<p class="text-lg md:text-xl mb-8 opacity-90">
-Más de <strong>+500 comercios</strong> ya usan SARA para controlar ventas, stock y ganancias.
-</p>
-<a href="https://wa.me/5491121683979" class="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition">
-Quiero mi licencia permanente
-</a>
-</div>
-</section>
+const testimonials = [
+  {
+    name: 'María González',
+    business: 'Tienda La Esperanza',
+    location: 'Buenos Aires',
+    text: 'Antes perdía horas con Excel. Ahora facturo en segundos y sé exactamente cuánto vendí cada día.',
+    rating: 5,
+    avatar: 'MG'
+  },
+  {
+    name: 'Carlos Rodríguez',
+    business: 'Ferretería El Tornillo',
+    location: 'Córdoba',
+    text: 'El control de stock me salvó. Ya no me quedo sin productos importantes.',
+    rating: 5,
+    avatar: 'CR'
+  },
+  {
+    name: 'Ana Martínez',
+    business: 'Boutique Elegance',
+    location: 'Mendoza',
+    text: 'Lo instalé en mi tablet y ahora facturo desde cualquier lugar.',
+    rating: 5,
+    avatar: 'AM'
+  }
+];
 
-<!-- BENEFICIOS -->
-<section class="py-20">
-<div class="max-w-7xl mx-auto px-6 text-center">
-<h3 class="text-3xl font-bold mb-12">Todo lo que necesitás en un solo lugar</h3>
+const benefits = [
+  { icon: Zap, text: 'Instalación en 5 minutos' },
+  { icon: Clock, text: 'Soporte técnico incluido' },
+  { icon: CreditCard, text: 'Pago único, sin mensualidades' },
+  { icon: Download, text: 'Actualizaciones gratuitas por 1 año' }
+];
 
-<div class="grid md:grid-cols-3 gap-10">
-<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-<h4 class="font-bold text-xl mb-4">Ventas rápidas</h4>
-<p>Facturá en segundos con cálculo automático y control total.</p>
-</div>
+export const Landing = () => {
 
-<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-<h4 class="font-bold text-xl mb-4">Control de stock</h4>
-<p>Actualización automática cada vez que vendés un producto.</p>
-</div>
+  const handleWhatsApp = () => {
+    window.open(WHATSAPP_URL, "_blank");
+  };
 
-<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-<h4 class="font-bold text-xl mb-4">Reportes claros</h4>
-<p>Visualizá ganancias, movimientos y rendimiento fácilmente.</p>
-</div>
-</div>
-</div>
-</section>
+  return (
+    <div className="min-h-screen bg-white">
 
-<!-- CAPTURAS -->
-<section class="py-20 bg-gray-100">
-<div class="max-w-6xl mx-auto px-6 text-center">
-<h3 class="text-3xl font-bold mb-12">Así se ve SARA por dentro</h3>
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center">
+                <Store className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-xl font-bold text-slate-900">SARA</span>
+            </div>
 
-<img src="https://via.placeholder.com/1000x500.png?text=Captura+del+Sistema+SARA" 
-class="rounded-2xl shadow-2xl mx-auto">
+            <Button 
+              onClick={handleWhatsApp}
+              className="bg-slate-900 hover:bg-slate-800"
+            >
+              Comprar licencia
+            </Button>
+          </div>
+        </div>
+      </header>
 
-</div>
-</section>
+      {/* Hero */}
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
 
-<!-- COMPARACION EXCEL -->
-<section class="py-20">
-<div class="max-w-6xl mx-auto px-6 text-center">
-<h3 class="text-3xl font-bold mb-12">¿Por qué no usar Excel?</h3>
+          <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <CheckCircle className="w-4 h-4" />
+            Más de 500 comercios ya usan SARA
+          </div>
 
-<div class="grid md:grid-cols-2 gap-10 text-left">
-<div class="bg-red-50 p-8 rounded-2xl">
-<h4 class="text-xl font-bold mb-4 text-red-600">Excel</h4>
-<ul class="space-y-3">
-<li>❌ Cálculos manuales</li>
-<li>❌ Errores frecuentes</li>
-<li>❌ Sin control automático de stock</li>
-<li>❌ No es sistema profesional</li>
-</ul>
-</div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+            Facturá más rápido,
+            <br />
+            <span className="text-blue-600">vendé más tranquilo</span>
+          </h1>
 
-<div class="bg-green-50 p-8 rounded-2xl">
-<h4 class="text-xl font-bold mb-4 text-green-600">SARA Facturación</h4>
-<ul class="space-y-3">
-<li>✔ Cálculos automáticos</li>
-<li>✔ Stock en tiempo real</li>
-<li>✔ Reportes automáticos</li>
-<li>✔ Imagen profesional</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+          <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+            Sistema profesional con licencia permanente.
+            Sin cuotas mensuales. Sin suscripciones.
+          </p>
 
-<!-- PRECIO -->
-<section class="py-20 bg-white text-center">
-<div class="max-w-3xl mx-auto px-6">
-<h3 class="text-3xl font-bold mb-6">Un solo pago. Para siempre.</h3>
-<p class="mb-6 text-lg text-gray-600">
-Sin mensualidades. Sin suscripciones. Licencia permanente.
-</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <Button 
+              size="lg" 
+              onClick={handleWhatsApp}
+              className="bg-slate-900 hover:bg-slate-800 text-lg px-8 py-6 h-auto"
+            >
+              Comprar ahora
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
 
-<div class="bg-blue-600 text-white p-10 rounded-3xl shadow-xl">
-<p class="text-4xl font-extrabold mb-4">$ Precio a confirmar</p>
-<p class="mb-6">Pago único</p>
-<a href="https://wa.me/5491121683979" class="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold hover:scale-105 transition">
-Comprar ahora
-</a>
-</div>
-</div>
-</section>
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={handleWhatsApp}
+              className="text-lg px-8 py-6 h-auto"
+            >
+              Ver demostración
+            </Button>
+          </div>
 
-<!-- CTA FINAL -->
-<section class="py-20 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-center">
-<div class="max-w-4xl mx-auto px-6">
-<h3 class="text-4xl font-extrabold mb-6">
-Dejá Excel. Profesionalizá tu negocio hoy.
-</h3>
-<a href="https://wa.me/5491121683979" class="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition">
-Hablar por WhatsApp
-</a>
-</div>
-</section>
+          {/* Preview */}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="bg-gradient-to-b from-slate-100 to-transparent rounded-2xl p-8">
+              <div className="bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden">
+                <div className="aspect-video bg-slate-900 flex items-center justify-center">
+                  <Store className="w-16 h-16 text-white opacity-40" />
+                </div>
+              </div>
+            </div>
+          </div>
 
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-400 text-center py-6">
-© 2026 SARA Facturación - Todos los derechos reservados
-</footer>
+        </div>
+      </section>
 
-</body>
-</html>
+      {/* Features */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+              Todo lo que tu comercio necesita
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <Card key={index} className="border-slate-200 hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+                    <feature.icon className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{feature.title}</h3>
+                  <p className="text-slate-600">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Un solo pago. Tu sistema para siempre.
+          </h2>
+
+          <p className="text-slate-300 mb-8">
+            Instalación simple • Licencia permanente • Sin mensualidades
+          </p>
+
+          <Card className="border-0 shadow-2xl max-w-md mx-auto">
+            <CardContent className="p-8">
+
+              <div className="text-4xl font-bold text-slate-900 mb-2">
+                Consultá precio
+              </div>
+
+              <div className="space-y-3 mb-8 text-left">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-center gap-3 text-slate-700">
+                    <benefit.icon className="w-5 h-5 text-emerald-500" />
+                    <span>{benefit.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Button 
+                size="lg" 
+                className="w-full bg-slate-900 hover:bg-slate-800"
+                onClick={handleWhatsApp}
+              >
+                Comprar licencia
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+
+            </CardContent>
+          </Card>
+
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Store className="w-6 h-6 text-slate-900" />
+            <span className="font-bold text-slate-900">SARA Facturación</span>
+          </div>
+          <p className="text-sm text-slate-500">
+            © 2026 SARA. Todos los derechos reservados.
+          </p>
+        </div>
+      </footer>
+
+    </div>
+  );
+};
+
